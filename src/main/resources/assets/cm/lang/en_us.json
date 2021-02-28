@@ -1,0 +1,14 @@
+{
+	"item.cm.inconspicuousliquid": "inconspicuousLiquid",
+	"item.cm.cum_collector": "inconspicuousLiquidCollector",
+
+	"item.cm.cum_sword": "inconspicuousLiquidSword",
+	"item.cm.cum_shovel":"inconspicuousLiquidShovel",
+	"item.cm.cum_axe":"inconspicuousLiquidAxe",
+	"item.cm.cum_picaxe":"inconspicuousLiquidPicaxe",
+
+	"itemGroup.cumtab": "inconspicuousLiquidTab",
+
+	"block.cm.cumcentrifuge": "inconspicuousLiquidCentrifuge",
+	"container.cumcentrifuge": "inconspicuous Liquid Centrifuge"
+}
