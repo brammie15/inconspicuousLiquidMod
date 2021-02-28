@@ -48,7 +48,7 @@ public class CumCentrifuge extends Block{
 		return ActionResultType.FAIL;
 	}
 
-	@Override
+	/*@Override
 	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if(state.getBlock() != newState.getBlock()){
 			TileEntity te = worldIn.getTileEntity(pos);
@@ -57,9 +57,20 @@ public class CumCentrifuge extends Block{
 			}
 		}
 	}
-
+*/
 	@Override
-	public void onPlayerDestroy(IWorld worldIn, BlockPos pos, BlockState state) {
-		InventoryHelper.dropItems(worldIn,pos,);
+	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+		TileEntity tile = worldIn.getTileEntity(pos);
+		if (tile instanceof CumCentrifugeTileEntity) {
+			CumCentrifugeTileEntity choppingBoard = (CumCentrifugeTileEntity) tile;
+			for (int slotIndex = 0; slotIndex < choppingBoard.getInventory().getSlots(); slotIndex++) {
+				InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
+						choppingBoard.getItemInSlot(slotIndex));
+			}
+		}
+
+		if (state.hasTileEntity() && (!state.isIn(newState.getBlock()) || !newState.hasTileEntity())) {
+			worldIn.removeTileEntity(pos);
+		}
 	}
 }
