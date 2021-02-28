@@ -69,7 +69,7 @@ public class CumCentrifuge extends Block{
 			}
 		}
 
-		if (state.hasTileEntity() && (!state.isIn(newState.getBlock()) || !newState.hasTileEntity())) {
+		if (state.hasTileEntity() && (state.getBlock() != newState.getBlock() || !newState.hasTileEntity())) {
 			worldIn.removeTileEntity(pos);
 		}
 	}
