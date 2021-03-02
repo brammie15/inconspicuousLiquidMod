@@ -1,5 +1,7 @@
 package com.brammie.inconspicuousliquidmod.objects.items;
 
+import com.brammie.inconspicuousliquidmod.init.itemInit;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -26,7 +28,11 @@ public class CumCollector extends Item{
 			
 			return super.onItemRightClick(worldIn, playerIn, handIn);
 		}else {
-			
+			//playerIn.inventory.removeStackFromSlot(this)
+			if(playerIn.addItemStackToInventory(new ItemStack(itemInit.CUM.get(),64))){
+				worldIn.addEntity(new ItemEntity(worldIn, playerIn.getPosX(),playerIn.getPosY(),playerIn.getPosZ(),new ItemStack(itemInit.CUM.get(),64)));
+			};
+			//World worldIn, double x, double y, double z, ItemStack stack
 			return super.onItemRightClick(worldIn, playerIn, handIn);
 		}
 	}

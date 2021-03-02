@@ -34,9 +34,17 @@ public class CumCentrifugeCotainer extends Container {
         int startY = 18;
         int slotSizePlus2 = 18;
 
-        this.addSlot(new Slot(playerInventory,37,11,11));
+        /*this.addSlot(new Slot(playerInventory,37,6,23));
         //22 42
-        this.addSlot(new Slot(playerInventory, 38 , 22,42));
+        this.addSlot(new Slot(playerInventory, 38 , 40,56));
+        //140 11
+        this.addSlot(new Slot(playerInventory, 39, 140, 11));*/
+
+        // Furnace Slots
+        this.addSlot(new SlotItemHandler(tileEntity.getInventory(), 0, 6,23));
+        this.addSlot(new SlotItemHandler(tileEntity.getInventory(), 1, 40,56));
+        this.addSlot(new SlotItemHandler(tileEntity.getInventory(), 2, 140, 11));
+
         // Main Player Inventory
         int startPlayerInvY = startY * 5 + 12;
         startPlayerInvY = 84;
@@ -49,10 +57,11 @@ public class CumCentrifugeCotainer extends Container {
 
         // Hotbar
         int hotbarY = startPlayerInvY + (startPlayerInvY / 2) + 7;
+        hotbarY = 142;
         for (int column = 0; column < 9; ++column) {
             this.addSlot(new Slot(playerInventory, column, startX + (column * slotSizePlus2), hotbarY));
         }
-    }
+    }//8 142
 
 
     private static CumCentrifugeTileEntity getTileEntity(final PlayerInventory playerInventory,

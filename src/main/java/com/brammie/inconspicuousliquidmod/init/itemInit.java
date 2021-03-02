@@ -24,7 +24,7 @@ public class itemInit {
 
 	public static final RegistryObject<Item> CUM_COLLECTOR = ITEMS.register("cum_collector",
 			() -> new CumCollector(new Item.Properties().group(CumItemGroup.instance)));
-	public static final RegistryObject<Item> CUM = ITEMS.register("inconspicuousliquid",
+	public static final RegistryObject<Item> CUM = ITEMS.register("cum",
 			() -> new Item(new Item.Properties().group(CumItemGroup.instance)));
 
 	public static final RegistryObject<Item> CUM_SWORD = ITEMS.register("cum_sword",
@@ -35,7 +35,7 @@ public class itemInit {
 			() -> new ShovelItem(ModItemTier.CUM, 3, 6.0f, new Item.Properties().group(CumItemGroup.instance)));
 	public static final RegistryObject<Item> CUM_AXE = ITEMS.register("cum_axe",
 			() -> new AxeItem(ModItemTier.CUM, 14, 6.0f, new Item.Properties().group(CumItemGroup.instance)));
-	
+	public static final RegistryObject<Item> RAW_CUM = ITEMS.register("raw_cum", () -> new Item(new Item.Properties().group(CumItemGroup.instance)));
 
 	
 	
